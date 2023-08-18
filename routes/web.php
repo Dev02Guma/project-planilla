@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return view('Login.form');});
+
+Route::get('dashboard', 'DashboardController@getHome')->name('dashboard');
+Route::get('lista-colaboradores', 'ColaboradorController@getColaboradores')->name('lista-colaboradores');
