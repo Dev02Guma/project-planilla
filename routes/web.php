@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,5 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {return view('Login.form');});
 
+Auth::routes();
+Route::get('/', 'Auth\LoginController@showLoginForm');
+
+
 Route::get('dashboard', 'DashboardController@getHome')->name('dashboard');
 Route::get('lista-colaboradores', 'ColaboradorController@getColaboradores')->name('lista-colaboradores');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
