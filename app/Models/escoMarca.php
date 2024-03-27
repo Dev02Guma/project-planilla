@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class escoMarca extends Model
 {
     protected $table = "marcas";
-    public $timestamps = false;
+    //public $timestamps = false;
 }
